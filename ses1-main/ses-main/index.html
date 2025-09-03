@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="stylesheet" href="../premium-v11.css">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>সময় টাইম — খবর, বিশ্লেষণ, সবশেষ আপডেট</title>
+  <meta name="description" content=" — দ্রুত, নির্ভরযোগ্য বাংলা সংবাদ।">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="./assets/img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <meta property="og:title" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./assets/img/og.png">
+  <meta property="og:description" content="দ্রুত, নির্ভরযোগ্য বাংলা সংবাদ">
+</head>
+<body>
+
+
+<header class="site-header">
+  <div class="container header-inner"><button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="primaryNav">☰</button>
+    <a href="index.html" class="brand">সময়<span class="earth"></span>টাইম</a>
+    <nav class="nav" id="primaryNav">
+      <ul>
+        <li><a href="index.html">প্রথম পাতা</a></li>
+        <li><a href="#">বাংলাদেশ</a></li>
+        <li><a href="#">আন্তর্জাতিক</a></li>
+        <li><a href="#">রাজনীতি</a></li>
+        <li><a href="#">অর্থনীতি</a></li>
+        <li><a href="#">খেলা</a></li>
+        <li><a href="#">চাকরি</a></li>
+        <li><a href="#">জীবনযাপন</a></li>
+        <li><a href="#">প্রযুক্তি</a></li>
+      </ul>
+    </nav><button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">🌓</button>
+  </div>
+</header>
+<section class="breaking-wrap"><div class="container"><div class="breaking-label">Breaking</div><div class="breaking-ticker" id="breakingTicker"></div></div></section>
+<span id="now-anchor" hidden></span>
+
+
+
+<main class="layout" class="container">
+  <section class="main">
+    <div>
+      <div id="leadArea" class="grid"></div>
+      <div class="center" style="margin-top:12px">
+        <button id="loadMore" class="load-more">আরও দেখুন</button>
+      </div>
+    </div>
+    <aside id="sideArea">
+      <h4 style="margin-top:0">সর্বশেষ</h4>
+      <div id="latestList" class="grid"></div>
+    </aside>
+  </section>
+<aside class="sidebar"><div class="trending"><h4>ট্রেন্ডিং</h4><div id="trendingList"></div></div></aside>
+</main>
+
+
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="index.html" class="brand small">সময়<span class="earth"></span>টাইম</a>
+    <div class="footer-links">
+      <h4>যোগাযোগ</h4>
+      <p><a href="mailto:contact@example.com">contact@example.com</a></p>
+    </div>
+    <div class="footer-legal">
+      <p>© সময় টাইম</p>
+      <p>বাংলা সংবাদপত্রের শৈলী — সাদা ব্যাকগ্রাউন্ডে পরিষ্কার টাইপোগ্রাফি, কোনো বক্সিং নয়।</p>
+    </div>
+  </div>
+<div class="footer-note">বাংলা সংবাদপত্রের শৈলী—সাদা ব্যাকগ্রাউন্ডে পরিষ্কার টাইপোগ্রাফি, কোনো বক্সিং নয়।</div>
+</footer>
+
+
+
+<script>
+  window.API_URL = "https://script.google.com/macros/s/AKfycbx4k-JeaByLPziHnXDGh5fuSvM18QpUH-QejFSmrhtWmHP5f7k3ggy2k5bNJjir8XoM/exec";
+</script>
+<script src="./assets/js/script.js" defer></script>
+<script src="/premium-v9.js"></script>
+<script src="premium-v10.js"></script>
+
+<script>
+(function(){
+  function fillTrending(){
+    var box = document.getElementById('trendingList');
+    if(!box) return;
+    if(window.ARTICLES && Array.isArray(window.ARTICLES)){
+      var items = window.ARTICLES.slice(0,8).map(function(a){
+        return '<div><a href="'+(a.url || ('article.html?id='+a.id))+'">'+(a.title||'')+'</a></div>';
+      }).join('');
+      box.innerHTML = items;
+    }
+  }
+  document.addEventListener('DOMContentLoaded', fillTrending);
+})();
+</script>
+
+<script src="../premium-v11.js"></script>
+</body>
+</html>

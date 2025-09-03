@@ -1,0 +1,55 @@
+
+/* === Premium v10 additions (AdSense + All Device UX) === */
+
+/* Layout with optional sticky sidebar (desktop) */
+.layout{
+  display:grid;
+  grid-template-columns: minmax(0,1fr);
+  gap:1.25rem;
+}
+@media(min-width: 1100px){
+  .layout{
+    grid-template-columns: minmax(0,1fr) 320px;
+    align-items:start;
+  }
+  .sidebar{ position:sticky; top:80px; }
+}
+
+/* News list (free-flow, no card box) */
+.news-list{ display:grid; gap:1rem; }
+@media(min-width: 1024px){ .news-list{ grid-template-columns:repeat(3, 1fr);} }
+@media(max-width: 1023.9px) and (min-width: 640px){ .news-list{ grid-template-columns:repeat(2, 1fr);} }
+@media(max-width: 639.9px){ .news-list{ grid-template-columns:1fr; } }
+
+/* Ad slots (clean, unobtrusive) */
+.ad-slot{
+  display:block;
+  text-align:center;
+  margin: 8px 0;
+  background: transparent;
+  border: none;
+}
+.ad-label{
+  font-size:12px;
+  color:var(--muted);
+  margin-bottom:4px;
+}
+
+/* In-article ad spacing */
+.article-body .ad-slot{ margin: 16px 0; }
+
+/* Breadcrumb */
+.breadcrumb{
+  font-size:14px;
+  color:var(--muted);
+  padding: .5rem 16px;
+}
+.breadcrumb a{ color:inherit; text-decoration:none; }
+.breadcrumb span.sep{ margin:0 .35rem; color:var(--muted); }
+
+/* Trending/Most read (optional sidebar) */
+.trending{ border-top:1px solid var(--line); padding-top:.75rem; }
+.trending h4{ margin:0 0 .5rem; }
+
+/* Image tweaks */
+img[loading="lazy"]{ /* browser handles lazy */ }

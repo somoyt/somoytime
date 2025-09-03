@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80">
+  <circle cx="40" cy="40" r="22" fill="#d50000" opacity="0.95"/>
+  <g stroke="#fff" stroke-width="1" opacity="0.75">
+    <ellipse cx="40" cy="40" rx="18" ry="10" fill="none"/>
+    <ellipse cx="40" cy="40" rx="10" ry="18" fill="none" transform="rotate(90 40 40)"/>
+    <line x1="22" y1="40" x2="58" y2="40"/>
+  </g>
+  <text x="70" y="50" style="font:700 40px 'Noto Sans Bengali', sans-serif; fill:#111">সময় টাইম</text>
+</svg>

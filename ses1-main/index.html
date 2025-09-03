@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="stylesheet" href="../premium-v11.css">
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>সময় টাইম</title>
+  <link href="style.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <span class="somoy">সময়</span>
+      <span class="earth"></span>
+      <span class="time">টাইম</span>
+    </div>
+    <button id="menu-toggle" class="menu-toggle">☰</button>
+    <nav class="navbar" id="navbar">
+      <ul>
+        <li><a href="#">প্রথম পাতা</a></li>
+        <li><a href="#">বাংলাদেশ</a></li>
+        <li><a href="#">আন্তর্জাতিক</a></li>
+        <li><a href="#">রাজনীতি</a></li>
+        <li><a href="#">অর্থনীতি</a></li>
+        <li><a href="#">খেলা</a></li>
+        <li><a href="#">চাকরি</a></li>
+        <li><a href="#">জীবনযাপন</a></li>
+        <li><a href="#">প্রযুক্তি</a></li>
+      </ul>
+    </nav>
+    <button id="dark-toggle" class="dark-toggle">🌓</button>
+  </header>
+
+  <div class="breaking-news">
+    <span>Breaking:</span>
+    <marquee behavior="scroll" direction="left" id="breaking-ticker">লোড হচ্ছে...</marquee>
+  </div>
+
+  <main class="layout" class="content">
+    <article class="news-card" data-time="2025-09-03T08:00:00">
+      <h2>লাইভ সংবাদ উদাহরণ</h2>
+      <p>এখানে গুগল ফর্ম + শিট থেকে সংবাদ লোড হবে।</p>
+      <p class="news-time"></p>
+      <div class="share">
+        <a href="#" class="fb">FB</a>
+        <a href="#" class="tw">TW</a>
+        <a href="#" class="wa">WA</a>
+      </div>
+    </article>
+
+    <section class="related">
+      <h3>আরও পড়ুন</h3>
+      <div class="related-grid">
+        <div class="related-item">Related 1</div>
+        <div class="related-item">Related 2</div>
+        <div class="related-item">Related 3</div>
+      </div>
+    </section>
+  <aside class="sidebar"><div class="trending"><h4>ট্রেন্ডিং</h4><div id="trendingList"></div></div></aside>
+</main>
+
+  <footer class="site-footer">
+    <div class="footer-logo">
+      <span class="somoy">সময়</span>
+      <span class="earth small"></span>
+      <span class="time">টাইম</span>
+    </div>
+    <div class="footer-links">
+      <p>বিভাগসমূহ: বাংলাদেশ · আন্তর্জাতিক · খেলা · অর্থনীতি</p>
+      <p>যোগাযোগ: contact@example.com</p>
+      <p>আইনগত: © সময় টাইম</p>
+    </div>
+  <div class="footer-note">বাংলা সংবাদপত্রের শৈলী—সাদা ব্যাকগ্রাউন্ডে পরিষ্কার টাইপোগ্রাফি, কোনো বক্সিং নয়।</div>
+</footer>
+
+  <script src="script.js"></script>
+<script src="/premium-v9.js"></script>
+<script src="premium-v10.js"></script>
+
+<script>
+(function(){
+  function fillTrending(){
+    var box = document.getElementById('trendingList');
+    if(!box) return;
+    if(window.ARTICLES && Array.isArray(window.ARTICLES)){
+      var items = window.ARTICLES.slice(0,8).map(function(a){
+        return '<div><a href="'+(a.url || ('article.html?id='+a.id))+'">'+(a.title||'')+'</a></div>';
+      }).join('');
+      box.innerHTML = items;
+    }
+  }
+  document.addEventListener('DOMContentLoaded', fillTrending);
+})();
+</script>
+
+<script src="../premium-v11.js"></script>
+</body>
+</html>
